@@ -10,11 +10,11 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = violence
+NAME = Harl
 
 SRCS_DIR = ./
-SRCS = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
-HEADERS = Weapon.hpp HumanA.hpp HumanB.hpp
+SRCS = main.cpp Harl.cpp
+HEADERS = Harl.hpp
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 

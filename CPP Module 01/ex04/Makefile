@@ -10,11 +10,10 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = violence
+NAME = replace
 
 SRCS_DIR = ./
-SRCS = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
-HEADERS = Weapon.hpp HumanA.hpp HumanB.hpp
+SRCS = main.cpp
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
@@ -23,7 +22,7 @@ OBJ 		= 	$(SRCS:.cpp=.o)
 OBJS 		= 	$(addprefix $(OBJS_DIR), $(OBJ))
 
 
-$(OBJS_DIR)%.o :	$(SRCS_DIR)%.cpp $(HEADERS) Makefile
+$(OBJS_DIR)%.o :	$(SRCS_DIR)%.cpp Makefile
 	@mkdir -p $(OBJS_DIR)
 	@echo "Compiling: $<"
 	@c++ $(FLAGS) -c $< -o $@

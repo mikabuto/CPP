@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mikabuto <mikabuto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,17 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
+#include "HumanB.hpp"
 
-HumanA::HumanA( std::string name, Weapon &weapon ): _name(name), _weapon(weapon) 
+HumanB::HumanB( std::string name ): _name(name), _weapon(NULL)
 {
-	std::cout << "HumanA " << name << " created with " << weapon.getType() << std::endl;
+	std::cout << "HumanB " << name << " created" << std::endl;
 }
 
-HumanA::~HumanA() {
-	std::cout << "HumanA " << this->_name << " destroyed" << std::endl;
+HumanB::~HumanB() {
+	std::cout << "HumanB " << this->_name << " destroyed" << std::endl;
 }
 
-void	HumanA::attack() {
-	std::cout << this->_name << " attacks with their " << this->_weapon.getType() << std::endl;
+void	HumanB::setWeapon( Weapon &weapon ) {
+	this->_weapon = &weapon;
+	std::cout << "HumanB " << this->_name << " takes " << this->_weapon->getType() << std::endl;
+}
+
+void	HumanB::attack() {
+	if (this->_weapon) {
+		std::cout << this->_name << " attacks with their " << this->_weapon->getType() << std::endl;
+	} else {
+		std::cout << this->_name << "doesn't have any weapon :(" << std::endl;
+	}
 }

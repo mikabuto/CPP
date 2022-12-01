@@ -14,11 +14,11 @@
 
 Weapon::Weapon(std::string type) {
 	this->_type = type;
-	std::cout << "Weapon object with " << type << " type created" << std::endl;
+	std::cout << "Weapon " << this->_type << " created" << std::endl;
 }
 
 Weapon::~Weapon() {
-	std::cout << "Weapon object with " << this->getType() << " type destroyed" << std::endl;
+	std::cout << "Weapon " << this->getType() << " destroyed" << std::endl;
 }
 
 std::string&	Weapon::getType() {
